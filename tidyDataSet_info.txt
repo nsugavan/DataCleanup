@@ -26,10 +26,10 @@ fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are: 
+The set of variables are the mean of the specific feature for subject based on activity that were estimated from these signals: 
 
-mean(): Mean value
-std(): Standard deviation
+mean():
+std():
 
 
 The complete list of variables of each feature vector is available in 'tidyDataSet.txt' in the header of the data.
