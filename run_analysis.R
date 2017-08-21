@@ -43,6 +43,13 @@ finalData <- cbind(subject,yMerge,xMerge)
 
 tidyDataSet <- ddply(finalData,.(Subject,Activity),.fun=function(x){colMeans(x[,-c(1:2)])})
 
+colnames(tidyDataSet) <- gsub("\\.mean\\.\\.\\.","Mean",colnames(tidyDataSet))
+colnames(tidyDataSet) <- gsub("\\.mean\\.\\.","Mean",colnames(tidyDataSet))
+colnames(tidyDataSet) <- gsub("\\.std\\.\\.\\.","StandardDeviation",colnames(tidyDataSet))
+colnames(tidyDataSet) <- gsub("\\.std\\.\\.","StandardDeviation",colnames(tidyDataSet))
+colnames(tidyDataSet) <- gsub("^t","time",colnames(tidyDataSet))
+colnames(tidyDataSet) <- gsub("^f","frequency",colnames(tidyDataSet))
+
 # Write the file
 
 write.csv(tidyDataSet, "./tidyDataSet.txt", row.names = FALSE)
